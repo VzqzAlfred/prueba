@@ -16,7 +16,7 @@
     //Recuperamos las variables crando con $ 
     //Y los igualamos con el name que le pusismos en el formulario
 
-    $curp=$_POST['idcurp'];
+    $curp=$_POST["idcurp"];
     $nombre=$_POST['name'];
     $apellidos=$_POST['surname'];
     $direccion=$_POST['direccion'];
