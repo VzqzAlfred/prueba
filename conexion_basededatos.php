@@ -1,6 +1,6 @@
 <?php
     //Se conecta el servidor con la vaeriable $conectar con el signo de pesos se crean las variables
-    $conectar=mysql_connect('localhost', 'root', '');
+    $conectar=@mysql_connect('localhost', 'root', '');
 
     //Se verifica si la conexión  (el @ es para que no de errores)
 
@@ -8,7 +8,7 @@
         echo"No se pudo conectar con el servidor";
     }else{
         $base=mysql_select_db('prueba');
-        if(!$base){
+        if(!$base   ){
             echo"No se encontro la base de datos";
         }
     }
@@ -25,8 +25,8 @@
     $contraseña=$_POST['password'];
 
     //Hacemos la sentencia sql
-    //despues de datos es EL NOMBRE DE LA TABLA EN PHPHMYADMI
-    $sql="INSER INTO usuario VALUES('$nombre', 
+    //despues de INTO es EL NOMBRE DE LA TABLA EN PHPHMYADMI
+    $sql="INSER INTO usuario VALUES('$curp', 
                                     '$nombre', 
                                     '$apellidos', 
                                     '$direccion', 
@@ -42,6 +42,6 @@
     if(!$ejecutar){
         echo"Hubo algún error.";
     }else{
-        echo"Datos guardados exitosamente <br> <a href='#'> Volver </a>";
+        echo"Datos guardados exitosamente <br> <a href='index.html'> Volver </a>";
     }
 ?>
