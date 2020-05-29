@@ -1,6 +1,6 @@
 <?php
     //conexión con la base de datos y el servidor.
-    $link = mysql_connect("localhost","root","") or die ("<h2> No se encuentra el servidor </h2>");
+    $link = mysql_connect('localhost','root','','prueba') or die ("<h2> No se encuentra el servidor </h2>");
     $db = mysql_select_db("prueba",$link) or die ("<h2> Error de conexión </h2>");
 
     //obtenemos los valores del formulario
