@@ -4,7 +4,7 @@
     die("Problemas en la conexión");
 
 
-    mysql_select_db("prueba", $conectar) or 
+    mysqli_select_db("prueba", $conectar) or 
     die('Problemas en laseleccion base de datos');
 
     //Recuperamos las variables crando con $ 
