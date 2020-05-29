@@ -1,23 +1,17 @@
 <?php
-    //Se conecta el servidor con la vaeriable $conectar con el signo de pesos se crean las variables
-    $conectar=@mysql_connect('localhost', 'root', '');
+    //Se conecta el servidor con la variable $conectar 
+    $conectar=mysql_connect("localhost", "root","") or 
+    die("Problemas en la conexión");
 
-    //Se verifica si la conexión  (el @ es para que no de errores)
 
-    if(!$conectar){
-        echo"No se pudo conectar con el servidor";
-    }else{
-        $base=mysql_select_db('prueba');
-        if(!$base   ){
-            echo"No se encontro la base de datos";
-        }
-    }
+    mysql_select_db("prueba", $conectar) or 
+    die('Problemas en laseleccion base de datos');
 
     //Recuperamos las variables crando con $ 
     //Y los igualamos con el name que le pusismos en el formulario
 
     $curp=$_POST["idcurp"];
-    $nombre=$_POST['name'];
+    $nombre=$_POST['names'];
     $apellidos=$_POST['surname'];
     $direccion=$_POST['direccion'];
     $edad=$_POST['years_old'];
@@ -26,22 +20,6 @@
 
     //Hacemos la sentencia sql
     //despues de INTO es EL NOMBRE DE LA TABLA EN PHPHMYADMI
-    $sql="INSER INTO usuario VALUES('$curp', 
-                                    '$nombre', 
-                                    '$apellidos', 
-                                    '$direccion', 
-                                    '$edad', 
-                                    '$email', 
-                                    '$contraseña')";
+    mysql_query("INSERT INTO usuario(CURP,Nombre,Apellidos,Direccion,Edad,e-mail,Contraseña) VALUES ('$curp','$names','$surname','$address','$years','$email','$password')",$conectar);
 
-
-    //Ejecutamos la sentencia de sql
-    $ejecutar=mysql_query($sql);
-
-    //Y finalmente se verifica la ejecución 
-    if(!$ejecutar){
-        echo"Hubo algún error.";
-    }else{
-        echo"Datos guardados exitosamente <br> <a href='index.html'> Volver </a>";
-    }
 ?>
