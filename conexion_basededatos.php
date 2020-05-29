@@ -1,6 +1,6 @@
 <?php
     //Se conecta el servidor con la variable $conectar 
-    $conectar=mysql_connect("localhost", "root","") or 
+    $conectar=mysql_connect("localhost", "root","","prueba") or 
     die("Problemas en la conexión");
 
 
