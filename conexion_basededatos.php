@@ -20,6 +20,6 @@
 
     //Hacemos la sentencia sql
     //despues de INTO es EL NOMBRE DE LA TABLA EN PHPHMYADMI
-    mysql_query("INSERT INTO usuario(CURP,Nombre,Apellidos,Direccion,Edad,e-mail,Contraseña) VALUES ('$curp','$names','$surname','$address','$years','$email','$password')",$conectar);
+    mysqli_query("INSERT INTO usuario(CURP,Nombre,Apellidos,Direccion,Edad,e-mail,Contraseña) VALUES ('$curp','$names','$surname','$address','$years','$email','$password')",$conectar);
 
 ?>
